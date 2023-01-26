@@ -1,11 +1,17 @@
-body {
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.container {
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 140px;
+  gap: 20px;
+}
+.sketch-container {
   display: flex;
   flex-wrap: wrap;
-  width: 21%;
+  width: 35%;
 }

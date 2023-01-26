@@ -1,11 +1,33 @@
-function createSquares(squares) {
-  for (let i = 0; i < squares; i++) {
+function createSquares() {
+  function btnHandler() {
+    document.querySelector(".sketch-container").replaceChildren();
+    let userPrompt = parseInt(
+      prompt("Enter number of squares to be generated")
+    );
+    if (userPrompt > 100) return;
+    let numberOfSquares = userPrompt * userPrompt;
+    return numberOfSquares;
+  }
+
+  function clear() {
+    return removeAllElements.replaceChildren();
+  }
+
+  let btn = document.querySelector(".btn-handler");
+  btn.addEventListener("click", btnHandler);
+
+  // let removeAllElements = document.querySelector("container");
+  // removeAllElements.addEventListener("click", clear);
+
+  let result = btnHandler();
+  console.log(result);
+
+  for (let i = 0; i < result; i++) {
     let square = document.createElement("div");
-    //square.className = "square";
 
     square.style.cssText = "height: 30px; width: 30px; border: 1px solid aqua";
 
-    document.querySelector(".container").appendChild(square);
+    document.querySelector(".sketch-container").appendChild(square);
 
     square.addEventListener(
       "mouseover",
@@ -23,4 +45,4 @@ function createSquares(squares) {
   }
 }
 
-console.log(createSquares(256));
+console.log(createSquares());
