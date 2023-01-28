@@ -1,6 +1,5 @@
 function createSquares() {
   function btnHandler() {
-    document.querySelector(".sketch-container").replaceChildren();
     let userPrompt = parseInt(
       prompt("Enter number of squares to be generated")
     );
@@ -10,14 +9,15 @@ function createSquares() {
   }
 
   function clear() {
-    return removeAllElements.replaceChildren();
+    //return document.querySelector(".sketch-container").replaceChildren();
+    location.reload();
   }
 
   let btn = document.querySelector(".btn-handler");
   btn.addEventListener("click", btnHandler);
 
-  // let removeAllElements = document.querySelector("container");
-  // removeAllElements.addEventListener("click", clear);
+  let clearSketch = document.querySelector(".clear");
+  clearSketch.addEventListener("click", clear);
 
   let result = btnHandler();
   console.log(result);
@@ -25,7 +25,7 @@ function createSquares() {
   for (let i = 0; i < result; i++) {
     let square = document.createElement("div");
 
-    square.style.cssText = "height: 30px; width: 30px; border: 1px solid aqua";
+    square.style.cssText = "height: 30px; width: 30px; border: 1px solid aqua;";
 
     document.querySelector(".sketch-container").appendChild(square);
 
